@@ -399,26 +399,30 @@ function HomePage() {
                 <div className="flex gap-3 mb-8">
                   <button
                     onClick={() => setVehicle("tuktuk")}
-                    className={`flex-1 py-4 px-4 rounded-2xl text-sm font-semibold transition-all duration-300 ${
+                    className={`flex-1 p-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
                       vehicle === "tuktuk"
                         ? "gradient-electric text-electric-foreground shadow-lg shadow-electric/25 scale-[1.02]"
                         : "bg-secondary/50 text-secondary-foreground hover:bg-secondary"
                     }`}
                   >
-                    <div className="text-lg mb-1">🛺</div>
-                    RM-T300 Tuktuk
+                    <div className="relative w-full h-16 rounded-xl overflow-hidden mb-2">
+                      <img src={tuktukProduct} alt="RM-T300" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="text-sm">RM-T300 Tuktuk</div>
                     <div className="text-xs opacity-80 font-normal mt-0.5">Ksh 380,000</div>
                   </button>
                   <button
                     onClick={() => setVehicle("motorcycle")}
-                    className={`flex-1 py-4 px-4 rounded-2xl text-sm font-semibold transition-all duration-300 ${
+                    className={`flex-1 p-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
                       vehicle === "motorcycle"
                         ? "gradient-electric text-electric-foreground shadow-lg shadow-electric/25 scale-[1.02]"
                         : "bg-secondary/50 text-secondary-foreground hover:bg-secondary"
                     }`}
                   >
-                    <div className="text-lg mb-1">🏍️</div>
-                    RM-M300 Motorcycle
+                    <div className="relative w-full h-16 rounded-xl overflow-hidden mb-2">
+                      <img src={motorcycleProduct} alt="RM-M300" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="text-sm">RM-M300 Motorcycle</div>
                     <div className="text-xs opacity-80 font-normal mt-0.5">Ksh 180,000</div>
                   </button>
                 </div>
