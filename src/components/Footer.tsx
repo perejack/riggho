@@ -46,7 +46,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">Get Started</h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Starting from just Ksh 38,000 deposit. Own your electric future today.
+              Starting from just Ksh 65,000 deposit. Own your electric future today.
             </p>
             <a
               href="https://wa.me/254700000000"

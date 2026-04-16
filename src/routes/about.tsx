@@ -79,7 +79,7 @@ export default function AboutPage() {
                 <span className="text-electric">It's Yours Too.</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                We are not just selling vehicles — we are handing people a livelihood upgrade. We believe going electric shouldn't mean going broke. That's why we've made it possible to get on the road with as little as Ksh 38,000 as a deposit.
+                We are not just selling vehicles — we are handing people a livelihood upgrade. We believe going electric shouldn't mean going broke. That's why we've made it possible to get on the road with as little as Ksh 65,000 as a deposit.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Our flagship RM-T300 Tuktuk isn't just a vehicle. It charges fast, runs on a swappable battery, and comes with a solar range extender that adds 30KM every day — for free, from the sun.

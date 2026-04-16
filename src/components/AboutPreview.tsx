@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
-import aboutOffice from "@/assets/about-office.jpg";
+import aboutOffice from "@/assets/realabout.jpeg";
 
 export default function AboutPreview() {
   return (
@@ -19,7 +19,7 @@ export default function AboutPreview() {
               RhingGo Emobility is the Kenyan face of Hangzhou RhingGo Technology Co. Ltd — a global leader in e-mobility solutions purpose-built for the African market. From our base in Mombasa, we are driving a quiet revolution — one electric tuktuk at a time.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              We believe going electric shouldn't mean going broke. That's why we've made it possible to get on the road with as little as Ksh 38,000 as a deposit. We are not just selling vehicles — we are handing people a livelihood upgrade.
+              We believe going electric shouldn't mean going broke. That's why we've made it possible to get on the road with as little as Ksh 65,000 as a deposit. We are not just selling vehicles — we are handing people a livelihood upgrade.
             </p>
             <Link
               to="/about"

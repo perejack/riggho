@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import HomePage from "@/routes/index";
 import ProductsPage from "@/routes/products";
 import AboutPage from "@/routes/about";
@@ -10,6 +11,7 @@ import FinancingPage from "@/routes/financing";
 function App() {
   return (
     <div className="min-h-screen bg-background">
+      <ScrollToTop />
       <Header />
       <main>
         <Routes>

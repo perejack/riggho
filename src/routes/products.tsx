@@ -1,8 +1,8 @@
 import { Zap, Sun, Battery, Gauge, Shield, Users, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
-import tuktukProduct from "@/assets/tuktuk-product.jpg";
-import motorcycleProduct from "@/assets/motorcycle-product.jpg";
+import tuktukProduct from "@/assets/tuktukbest.jpeg";
+import motorcycleProduct from "@/assets/motorcycle-chatgpt.png";
 
 const tuktukSpecs = [
   { icon: <Zap size={18} />, label: "Motor", value: "6,000W" },
