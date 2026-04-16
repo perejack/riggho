@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from '@tanstack/react-router'
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Zap, Sun, Battery, ArrowRight, Fuel, Leaf, Volume2, Shield, Calculator, CheckCircle, TrendingDown, Wallet, Calendar, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
@@ -16,11 +17,7 @@ import zeroEmissionsImg from "@/assets/zero-emissions.jpg";
 import silentRideImg from "@/assets/silent-ride.jpg";
 import solarPoweredImg from "@/assets/solar-powered.jpg";
 
-export const Route = createFileRoute("/")({
-  component: HomePage,
-});
-
-function HomePage() {
+export default function HomePage() {
   const [deposit, setDeposit] = useState(38000);
   const [vehicle, setVehicle] = useState<"tuktuk" | "motorcycle">("tuktuk");
   const [activeTerm, setActiveTerm] = useState<12 | 18 | 24>(18);

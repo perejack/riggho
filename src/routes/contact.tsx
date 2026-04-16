@@ -1,28 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, MapPin, MessageCircle, Send } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Us — RhingGo Emobility Kenya" },
-      { name: "description", content: "Visit us near Naivas Likoni, Mombasa. WhatsApp, call, or fill our inquiry form. We'd love to hear from you." },
-      { property: "og:title", content: "Contact RhingGo Emobility" },
-      { property: "og:description", content: "Reach us in Mombasa. WhatsApp preferred — we respond fast." },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", type: "individual", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Hi RhingGo! I'm ${formData.name}. ${formData.message}. Contact: ${formData.phone || formData.email}`;
-    window.open(`https://wa.me/254700000000?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/254795704273?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

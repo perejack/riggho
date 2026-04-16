@@ -1,21 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Zap, Sun, Battery, Gauge, Shield, Users, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
 import tuktukProduct from "@/assets/tuktuk-product.jpg";
 import motorcycleProduct from "@/assets/motorcycle-product.jpg";
-
-export const Route = createFileRoute("/products")({
-  head: () => ({
-    meta: [
-      { title: "Electric Models — RhingGo Emobility Kenya" },
-      { name: "description", content: "Explore the RM-T300 Electric Tuktuk and RM-M300 Motorcycle. Solar-powered, swappable batteries, built for Kenya." },
-      { property: "og:title", content: "RhingGo Electric Models" },
-      { property: "og:description", content: "Solar-powered electric tuktuks and motorcycles built for African roads." },
-    ],
-  }),
-  component: ProductsPage,
-});
 
 const tuktukSpecs = [
   { icon: <Zap size={18} />, label: "Motor", value: "6,000W" },
@@ -33,7 +20,7 @@ const motorSpecs = [
   { icon: <Shield size={18} />, label: "Charging", value: "4 hours" },
 ];
 
-function ProductsPage() {
+export default function ProductsPage() {
   return (
     <>
       <section className="py-24">
@@ -77,7 +64,7 @@ function ProductsPage() {
               </div>
               <div className="flex gap-3">
                 <a
-                  href="https://wa.me/254700000000?text=I'm%20interested%20in%20the%20RM-T300%20Tuktuk"
+                  href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20the%20RM-T300%20Tuktuk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="gradient-electric text-electric-foreground px-6 py-3 rounded-xl text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90"
@@ -117,7 +104,7 @@ function ProductsPage() {
               </div>
               <div className="flex gap-3">
                 <a
-                  href="https://wa.me/254700000000?text=I'm%20interested%20in%20the%20RM-M300%20Motorcycle"
+                  href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20the%20RM-M300%20Motorcycle"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="gradient-electric text-electric-foreground px-6 py-3 rounded-xl text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90"

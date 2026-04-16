@@ -1,20 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
-
-export const Route = createFileRoute("/financing")({
-  head: () => ({
-    meta: [
-      { title: "Financing — RhingGo Emobility Kenya" },
-      { name: "description", content: "Own an electric tuktuk from Ksh 38,000 deposit. Flexible payment plans for every budget." },
-      { property: "og:title", content: "RhingGo Financing — Start from Ksh 38,000" },
-      { property: "og:description", content: "Flexible payment plans to get you on the road with an electric vehicle." },
-    ],
-  }),
-  component: FinancingPage,
-});
 
 const steps = [
   { num: "01", title: "Pay Deposit", desc: "Start with as little as Ksh 38,000 to secure your vehicle." },
@@ -23,7 +10,7 @@ const steps = [
   { num: "04", title: "Start Earning", desc: "Hit the road and start saving Ksh 40,000+ per month on fuel." },
 ];
 
-function FinancingPage() {
+export default function FinancingPage() {
   const [deposit, setDeposit] = useState(38000);
   const [vehicle, setVehicle] = useState<"tuktuk" | "motorcycle">("tuktuk");
   const vehiclePrice = vehicle === "tuktuk" ? 380000 : 180000;
@@ -136,7 +123,7 @@ function FinancingPage() {
               )}
 
               <a
-                href="https://wa.me/254700000000?text=I'm%20interested%20in%20financing"
+                href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20financing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gradient-electric text-electric-foreground w-full py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-all"

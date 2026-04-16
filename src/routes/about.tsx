@@ -1,23 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, Globe, MapPin, Target } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
 import aboutOffice from "@/assets/about-office.jpg";
 import riderLifestyle from "@/assets/rider-lifestyle.jpg";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — RhingGo Emobility Kenya" },
-      { name: "description", content: "Kenya's home of electric motorcycles and tuktuks. Backed by Hangzhou RhingGo Technology, based in Mombasa." },
-      { property: "og:title", content: "About RhingGo Emobility Kenya" },
-      { property: "og:description", content: "Driving a quiet revolution in Kenya — one electric tuktuk at a time." },
-    ],
-  }),
-  component: AboutPage,
-});
-
-function AboutPage() {
+export default function AboutPage() {
   return (
     <>
       {/* Hero */}
