@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router'
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,7 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import ProductCard from "@/components/ProductCard";
 import SectionLabel from "@/components/SectionLabel";
 import AboutPreview from "@/components/AboutPreview";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-fleet.jpg";
 import tuktukProduct from "@/assets/tuktuk-product.jpg";
 import motorcycleProduct from "@/assets/motorcycle-product.jpg";
 import riderLifestyle from "@/assets/rider-lifestyle.jpg";
