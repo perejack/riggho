@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 interface Props {
@@ -12,6 +12,12 @@ interface Props {
 }
 
 export default function ProductCard({ name, description, image, price, specs, delay = 0 }: Props) {
+  const navigate = useNavigate();
+
+  const handleViewDetails = () => {
+    navigate("/products");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -42,12 +48,12 @@ export default function ProductCard({ name, description, image, price, specs, de
           ))}
         </div>
         <div className="flex gap-3">
-          <Link
-            to="/products"
-            className="flex-1 gradient-electric text-electric-foreground text-center py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all"
+          <button
+            onClick={handleViewDetails}
+            className="flex-1 gradient-electric text-electric-foreground text-center py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all cursor-pointer"
           >
             View Details
-          </Link>
+          </button>
           <a
             href={`https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(name)}.`}
             target="_blank"
