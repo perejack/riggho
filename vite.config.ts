@@ -7,5 +7,13 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      external: [],
+    },
+  },
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
   },
 })
