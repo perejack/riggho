@@ -14,6 +14,11 @@ import zeroFuelImg from "@/assets/zero-fuel.jpg";
 import zeroEmissionsImg from "@/assets/zero-emissions.jpg";
 import silentRideImg from "@/assets/silent-ride.jpg";
 import solarPoweredImg from "@/assets/solar-powered.jpg";
+import fortuneImg from "@/assets/fortune.jpg";
+import naviLogo from "@/assets/navi logo.png";
+import nairobiLocation from "@/assets/NAIROBI.png";
+import kisumuLocation from "@/assets/NAKURU.png";
+import mombasaLocation from "@/assets/MOMBASA.png";
 
 export default function HomePage() {
 
@@ -21,7 +26,7 @@ export default function HomePage() {
     { value: "110KM", label: "Range per charge", icon: <Zap size={18} /> },
     { value: "6,000W", label: "Motor power", icon: <Battery size={18} /> },
     { value: "30KM", label: "Free solar daily", icon: <Sun size={18} /> },
-    { value: "Ksh 38K", label: "Deposit to start", icon: <Shield size={18} /> },
+    { value: "Ksh 65K", label: "Deposit to start", icon: <Shield size={18} /> },
   ];
 
   const benefits = [
@@ -37,8 +42,8 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="RhingGo electric vehicles on Mombasa streets" width={1920} height={1080} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
@@ -126,8 +131,8 @@ export default function HomePage() {
               name="RM-M300 Electric Motorcycle"
               description="Silent power for the boda boda revolution. Fast charging, zero emissions, maximum hustle."
               image={motorcycleProduct}
-              price="From Ksh 180,000"
-              specs={["80KM Range", "Fast Charging", "Low Maintenance", "3,000W Motor"]}
+              price="From Ksh 169,000"
+              specs={["80KM Range", "Swappable Battery", "Low Maintenance", "3,000W Motor"]}
               delay={0.15}
             />
           </div>
@@ -171,8 +176,7 @@ export default function HomePage() {
             <AnimatedSection delay={0.2}>
               <SectionLabel icon="🔋" text="Charging Infrastructure" />
               <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                Swap & Go in{" "}
-                <span className="text-electric">Under 2 Minutes</span>
+                Swap & Go
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Our swappable battery system means you never wait for a charge. Pull up, swap your battery, and get back on the road. We're building charging stations across Mombasa and expanding to Nairobi.
@@ -208,7 +212,7 @@ export default function HomePage() {
                 <div className="rounded-2xl border border-border p-6 mb-4 bg-surface">
                   <h3 className="text-destructive font-semibold mb-2">The Old Way (Petrol)</h3>
                   <p className="text-muted-foreground text-sm">
-                    Ksh 1,500–2,000 in fuel <strong className="text-foreground">every day</strong>. That's Ksh 45,000–60,000 every month — gone.
+                    Daily fuel costs drain your earnings. Petrol prices keep rising, eating into your profits every single day — money that disappears fast.
                   </p>
                 </div>
               </AnimatedSection>
@@ -217,19 +221,15 @@ export default function HomePage() {
                 <div className="rounded-2xl border border-electric/30 p-6 bg-electric/5">
                   <h3 className="text-electric font-semibold mb-2">The RhingGo Way (Electric)</h3>
                   <p className="text-muted-foreground text-sm">
-                    Under <strong className="text-foreground">Ksh 8,000/month</strong> on energy. Save over <strong className="text-electric">Ksh 40,000 every month</strong> — money that stays in your pocket.
+                    Minimal energy costs with charging from the grid or <strong className="text-foreground">free solar charging</strong>. Save thousands every month — money that stays in your pocket and helps your business grow.
                   </p>
                 </div>
               </AnimatedSection>
             </div>
 
             <AnimatedSection delay={0.1}>
-              <div className="relative rounded-2xl overflow-hidden">
+              <div className="rounded-2xl overflow-hidden">
                 <img src={riderLifestyle} alt="Happy RhingGo rider" loading="lazy" width={800} height={600} className="w-full h-auto" />
-                <div className="absolute bottom-6 right-6 gradient-electric text-electric-foreground px-6 py-4 rounded-2xl">
-                  <span className="text-2xl font-bold block">Ksh 40K+</span>
-                  <span className="text-sm opacity-80">Saved Monthly</span>
-                </div>
               </div>
             </AnimatedSection>
           </div>
@@ -308,7 +308,7 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {/* Watu Credit */}
             <AnimatedSection delay={0}>
               <a
@@ -337,8 +337,64 @@ export default function HomePage() {
               </a>
             </AnimatedSection>
 
-            {/* Rafiki Microfinance */}
+            {/* M-KOPA */}
             <AnimatedSection delay={0.1}>
+              <a
+                href="https://m-kopa.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block h-full"
+              >
+                <div className="h-full p-8 rounded-3xl bg-surface border border-border/50 hover:border-electric/50 transition-all duration-500 hover:shadow-2xl hover:shadow-electric/10 hover:-translate-y-2">
+                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8">
+                    <img 
+                      src="https://techafricanews.com/wp-content/uploads/2024/09/MKOPA-PR.jpg" 
+                      alt="M-KOPA" 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">M-KOPA</h3>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    Pay-as-you-go technology for easy, connected ownership.
+                  </p>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-semibold">
+                    <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
+                    Simple digital payment plans
+                  </div>
+                </div>
+              </a>
+            </AnimatedSection>
+
+            {/* Fortune Credit */}
+            <AnimatedSection delay={0.2}>
+              <a
+                href="https://fortunecredit.co.ke"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block h-full"
+              >
+                <div className="h-full p-8 rounded-3xl bg-surface border border-border/50 hover:border-electric/50 transition-all duration-500 hover:shadow-2xl hover:shadow-electric/10 hover:-translate-y-2">
+                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8">
+                    <img 
+                      src={fortuneImg} 
+                      alt="Fortune Credit Limited" 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Fortune Credit Limited</h3>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    A microfinance institution (MFI) based in Nairobi, Kenya, that focuses on providing financial and non-financial services to underserved and unbanked populations.
+                  </p>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-semibold">
+                    <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
+                    Serving the unbanked
+                  </div>
+                </div>
+              </a>
+            </AnimatedSection>
+
+            {/* Rafiki Microfinance */}
+            <AnimatedSection delay={0.3}>
               <a
                 href="https://rafikibank.co.ke"
                 target="_blank"
@@ -365,10 +421,10 @@ export default function HomePage() {
               </a>
             </AnimatedSection>
 
-            {/* M-KOPA */}
-            <AnimatedSection delay={0.2}>
+            {/* Navio */}
+            <AnimatedSection delay={0.4}>
               <a
-                href="https://m-kopa.com"
+                href="https://njavio.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block h-full"
@@ -376,18 +432,18 @@ export default function HomePage() {
                 <div className="h-full p-8 rounded-3xl bg-surface border border-border/50 hover:border-electric/50 transition-all duration-500 hover:shadow-2xl hover:shadow-electric/10 hover:-translate-y-2">
                   <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8">
                     <img 
-                      src="https://techafricanews.com/wp-content/uploads/2024/09/MKOPA-PR.jpg" 
-                      alt="M-KOPA" 
+                      src={naviLogo} 
+                      alt="Navio" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">M-KOPA</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Navio</h3>
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    Pay-as-you-go technology for easy, connected ownership.
+                    A financial consultancy and advisory firm based in Kenya. Unlike traditional banks or mobile lending apps, they primarily focus on expert guidance for individuals and businesses.
                   </p>
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-semibold">
                     <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-                    Simple digital payment plans
+                    Expert financial guidance
                   </div>
                 </div>
               </a>
@@ -451,26 +507,106 @@ export default function HomePage() {
               <div className="p-6 rounded-2xl bg-background border border-border/50 h-full">
                 <MapPin size={24} className="text-electric mb-3" />
                 <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
-                <p className="text-sm text-muted-foreground">Near Naivas Likoni, Mombasa</p>
+                <p className="text-sm text-muted-foreground">3 Locations Across Kenya</p>
               </div>
             </AnimatedSection>
           </div>
 
-          {/* Map */}
-          <AnimatedSection delay={0.4}>
-            <div className="rounded-2xl overflow-hidden border border-border/50 h-64 mt-8">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d39.66!3d-4.09!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDUnMjQuMCJTIDM5wrAzOSczNi4wIkU!5e0!3m2!1sen!2ske!4v1"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="RhingGo Mombasa Location"
-              />
-            </div>
-          </AnimatedSection>
+          {/* Locations Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            {/* Nairobi */}
+            <AnimatedSection delay={0.4}>
+              <a 
+                href="https://maps.app.goo.gl/QwvnfaPojPnVBtv16"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl overflow-hidden border border-border/50 hover:border-electric/30 transition-all group"
+              >
+                <div className="h-48 overflow-hidden bg-muted relative">
+                  <img 
+                    src={nairobiLocation}
+                    alt="Nairobi Location"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <MapPin size={40} className="text-electric drop-shadow-lg" />
+                  </div>
+                </div>
+                <div className="p-5 bg-surface">
+                  <div className="flex items-center gap-2 mb-2">
+                    <MapPin size={16} className="text-electric" />
+                    <h3 className="font-bold text-foreground">Nairobi</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">Westlands Business District - Main showroom & corporate office</p>
+                  <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
+                    View on Google Maps <ArrowRight size={14} />
+                  </span>
+                </div>
+              </a>
+            </AnimatedSection>
+
+            {/* Kisumu */}
+            <AnimatedSection delay={0.5}>
+              <a 
+                href="https://maps.app.goo.gl/QqJVqtBvPPKWpZDGA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl overflow-hidden border border-border/50 hover:border-electric/30 transition-all group"
+              >
+                <div className="h-48 overflow-hidden bg-muted relative">
+                  <img 
+                    src={kisumuLocation}
+                    alt="Kisumu Location"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <MapPin size={40} className="text-blue-500 drop-shadow-lg" />
+                  </div>
+                </div>
+                <div className="p-5 bg-surface">
+                  <div className="flex items-center gap-2 mb-2">
+                    <MapPin size={16} className="text-electric" />
+                    <h3 className="font-bold text-foreground">Kisumu</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">Lake Basin Mall area - Serving Western Kenya region</p>
+                  <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
+                    View on Google Maps <ArrowRight size={14} />
+                  </span>
+                </div>
+              </a>
+            </AnimatedSection>
+
+            {/* Mombasa */}
+            <AnimatedSection delay={0.6}>
+              <a 
+                href="https://www.google.com/maps/place/RHINGGO+ELECTRIC+TUKTUK/@-4.0743892,39.6665507,656m/data=!3m2!1e3!4b1!4m6!3m5!1s0x184013dd2b3b3dff:0x32940621bca7bd67!8m2!3d-4.0743892!4d39.6665507!16s%2Fg%2F11yl7vq_7_?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl overflow-hidden border border-border/50 hover:border-electric/30 transition-all group"
+              >
+                <div className="h-48 overflow-hidden bg-muted relative">
+                  <img 
+                    src={mombasaLocation}
+                    alt="Mombasa Location"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <MapPin size={40} className="text-orange-500 drop-shadow-lg" />
+                  </div>
+                </div>
+                <div className="p-5 bg-surface">
+                  <div className="flex items-center gap-2 mb-2">
+                    <MapPin size={16} className="text-electric" />
+                    <h3 className="font-bold text-foreground">Mombasa</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">Near Naivas Likoni - Flagship showroom & service center</p>
+                  <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
+                    View on Google Maps <ArrowRight size={14} />
+                  </span>
+                </div>
+              </a>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
     </>

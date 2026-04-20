@@ -17,7 +17,7 @@ const motorSpecs = [
   { icon: <Zap size={18} />, label: "Motor", value: "3,000W" },
   { icon: <Battery size={18} />, label: "Range", value: "80KM" },
   { icon: <Gauge size={18} />, label: "Top Speed", value: "70 km/h" },
-  { icon: <Shield size={18} />, label: "Charging", value: "4 hours" },
+  { icon: <Shield size={18} />, label: "Battery", value: "Swappable" },
 ];
 
 export default function ProductsPage() {
@@ -100,7 +100,7 @@ export default function ProductsPage() {
                 ))}
               </div>
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-2xl font-bold text-electric">From Ksh 180,000</span>
+                <span className="text-2xl font-bold text-electric">From Ksh 169,000</span>
               </div>
               <div className="flex gap-3">
                 <a
