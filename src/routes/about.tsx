@@ -90,7 +90,7 @@ export default function AboutPage() {
                   <div className="text-xs text-muted-foreground">Range</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-electric">6,000W</div>
+                  <div className="text-2xl font-bold text-electric">6,000kw</div>
                   <div className="text-xs text-muted-foreground">Power</div>
                 </div>
                 <div className="text-center">

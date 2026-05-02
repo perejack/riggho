@@ -1,6 +1,9 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Zap, Sun, Battery, ArrowRight, Fuel, Leaf, Volume2, Shield, CheckCircle, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import L from "leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import AnimatedSection from "@/components/AnimatedSection";
 import ProductCard from "@/components/ProductCard";
 import SectionLabel from "@/components/SectionLabel";
@@ -15,16 +18,74 @@ import zeroEmissionsImg from "@/assets/zero-emissions.jpg";
 import silentRideImg from "@/assets/silent-ride.jpg";
 import solarPoweredImg from "@/assets/solar-powered.jpg";
 import fortuneImg from "@/assets/fortune.jpg";
-import naviLogo from "@/assets/navi logo.png";
+import swapImage from "@/assets/swappablenewimage.jpeg";
+import naviLogo from "@/assets/navionewlogo.jpeg";
 import nairobiLocation from "@/assets/NAIROBI.png";
 import kisumuLocation from "@/assets/NAKURU.png";
 import mombasaLocation from "@/assets/MOMBASA.png";
 
 export default function HomePage() {
 
+  const MapContainerAny = MapContainer as unknown as any;
+  const TileLayerAny = TileLayer as unknown as any;
+  const MarkerAny = Marker as unknown as any;
+
+  const locationPins = useMemo(
+    () => [
+      {
+        name: "Nairobi",
+        address: "Westlands Business District - Main showroom & corporate office",
+        href: "https://maps.app.goo.gl/QwvnfaPojPnVBtv16",
+        latLng: [-1.2921, 36.8219] as const,
+      },
+      {
+        name: "Kisumu",
+        address: "Lake Basin Mall area - Serving Western Kenya region",
+        href: "https://maps.app.goo.gl/QqJVqtBvPPKWpZDGA",
+        latLng: [-0.0917, 34.768] as const,
+      },
+      {
+        name: "Mombasa",
+        address: "Near Naivas Likoni - Flagship showroom & service center",
+        href: "https://www.google.com/maps/place/RHINGGO+ELECTRIC+TUKTUK/@-4.0743892,39.6665507",
+        latLng: [-4.0435, 39.6682] as const,
+      },
+    ],
+    []
+  );
+
+  const markerIcon = useMemo(
+    () =>
+      L.divIcon({
+        className: "",
+        iconSize: [34, 34],
+        iconAnchor: [17, 34],
+        popupAnchor: [0, -34],
+        html: `
+          <div style="
+            width:34px;height:34px;border-radius:9999px;
+            background:var(--electric);
+            color:var(--electric-foreground);
+            display:flex;align-items:center;justify-content:center;
+            box-shadow:0 10px 25px rgba(0,0,0,0.25);
+            border:3px solid rgba(255,255,255,0.35);
+            font-weight:900;font-size:14px;
+          ">R</div>
+          <div style="
+            width:0;height:0;margin:0 auto;
+            border-left:7px solid transparent;
+            border-right:7px solid transparent;
+            border-top:10px solid var(--electric);
+            filter:drop-shadow(0 6px 10px rgba(0,0,0,0.15));
+          "></div>
+        `,
+      }),
+    []
+  );
+
   const stats = [
     { value: "110KM", label: "Range per charge", icon: <Zap size={18} /> },
-    { value: "6,000W", label: "Motor power", icon: <Battery size={18} /> },
+    { value: "6,000kw", label: "Power", icon: <Battery size={18} /> },
     { value: "30KM", label: "Free solar daily", icon: <Sun size={18} /> },
     { value: "Ksh 65K", label: "Deposit to start", icon: <Shield size={18} /> },
   ];
@@ -124,7 +185,7 @@ export default function HomePage() {
               description="The flagship. Solar-powered, swappable battery, 110KM range. The workhorse of Mombasa's streets."
               image={tuktukProduct}
               price="From Ksh 380,000"
-              specs={["110KM Range", "Solar Extender", "Swappable Battery", "6,000W Motor"]}
+              specs={["110KM Range", "Solar Extender", "Swappable Battery", "6,000kw"]}
               delay={0}
             />
             <ProductCard
@@ -132,7 +193,7 @@ export default function HomePage() {
               description="Silent power for the boda boda revolution. Fast charging, zero emissions, maximum hustle."
               image={motorcycleProduct}
               price="From Ksh 169,000"
-              specs={["80KM Range", "Swappable Battery", "Low Maintenance", "3,000W Motor"]}
+              specs={["80KM Range", "Swappable Battery", "Low Maintenance", "3,000kw"]}
               delay={0.15}
             />
           </div>
@@ -170,7 +231,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="rounded-2xl overflow-hidden">
-                <img src="https://techpoint.africa/wp-content/uploads/2025/09/ARC-Ride-electric-motorcycle-battery-swapping-charging-station-1024x570.jpg.webp" alt="Battery swap station" loading="lazy" width={800} height={600} className="w-full h-auto" />
+                <img src={swapImage} alt="Battery swap station" loading="lazy" width={800} height={600} className="w-full h-auto" />
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
@@ -198,10 +259,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <AnimatedSection>
-                <SectionLabel icon="🌿" text="The Maths" />
                 <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                  Why Electric?{" "}
-                  <span className="text-electric">Here's the Maths.</span>
+                  Why Electric?
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   Forget the marketing. Let's talk numbers — the kind that matter when you're trying to feed your family and grow your business.
@@ -318,11 +377,11 @@ export default function HomePage() {
                 className="group block h-full"
               >
                 <div className="h-full p-8 rounded-3xl bg-surface border border-border/50 hover:border-electric/50 transition-all duration-500 hover:shadow-2xl hover:shadow-electric/10 hover:-translate-y-2">
-                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8">
+                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8 flex items-center justify-center p-4">
                     <img 
                       src="https://watu.com/wp-content/uploads/Watu_OpenGraph.jpg" 
                       alt="Watu Credit" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Watu Credit</h3>
@@ -346,11 +405,11 @@ export default function HomePage() {
                 className="group block h-full"
               >
                 <div className="h-full p-8 rounded-3xl bg-surface border border-border/50 hover:border-electric/50 transition-all duration-500 hover:shadow-2xl hover:shadow-electric/10 hover:-translate-y-2">
-                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8">
+                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8 flex items-center justify-center p-4">
                     <img 
                       src="https://techafricanews.com/wp-content/uploads/2024/09/MKOPA-PR.jpg" 
                       alt="M-KOPA" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">M-KOPA</h3>
@@ -374,11 +433,11 @@ export default function HomePage() {
                 className="group block h-full"
               >
                 <div className="h-full p-8 rounded-3xl bg-surface border border-border/50 hover:border-electric/50 transition-all duration-500 hover:shadow-2xl hover:shadow-electric/10 hover:-translate-y-2">
-                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8">
+                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8 flex items-center justify-center p-4">
                     <img 
                       src={fortuneImg} 
                       alt="Fortune Credit Limited" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Fortune Credit Limited</h3>
@@ -402,11 +461,11 @@ export default function HomePage() {
                 className="group block h-full"
               >
                 <div className="h-full p-8 rounded-3xl bg-surface border border-border/50 hover:border-electric/50 transition-all duration-500 hover:shadow-2xl hover:shadow-electric/10 hover:-translate-y-2">
-                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8">
+                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8 flex items-center justify-center p-4">
                     <img 
                       src="https://rafikibank.co.ke/wp-content/uploads/2019/10/Logo-FOr-Blue.png" 
                       alt="Rafiki Microfinance" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Rafiki Microfinance</h3>
@@ -430,11 +489,11 @@ export default function HomePage() {
                 className="group block h-full"
               >
                 <div className="h-full p-8 rounded-3xl bg-surface border border-border/50 hover:border-electric/50 transition-all duration-500 hover:shadow-2xl hover:shadow-electric/10 hover:-translate-y-2">
-                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8">
+                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8 flex items-center justify-center p-4">
                     <img 
                       src={naviLogo} 
                       alt="Navio" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Navio</h3>
@@ -512,6 +571,38 @@ export default function HomePage() {
             </AnimatedSection>
           </div>
 
+          <AnimatedSection delay={0.35}>
+            <div className="mt-8 rounded-3xl overflow-hidden border border-border/50 shadow-2xl">
+              <div className="h-[360px] md:h-[420px]">
+                <MapContainerAny center={[-1.2, 37.2]} zoom={6} scrollWheelZoom className="h-full w-full">
+                  <TileLayerAny
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  />
+
+                  {locationPins.map((loc) => (
+                    <MarkerAny key={loc.name} position={loc.latLng as [number, number]} icon={markerIcon}>
+                      <Popup>
+                        <div style={{ minWidth: 200 }}>
+                          <div style={{ fontWeight: 800 }}>{loc.name}</div>
+                          <div style={{ fontSize: 12, opacity: 0.8, marginTop: 4 }}>{loc.address}</div>
+                          <a
+                            href={loc.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ display: "inline-block", marginTop: 8, fontWeight: 700, color: "#00d084" }}
+                          >
+                            View on Google Maps
+                          </a>
+                        </div>
+                      </Popup>
+                    </MarkerAny>
+                  ))}
+                </MapContainerAny>
+              </div>
+            </div>
+          </AnimatedSection>
+
           {/* Locations Grid */}
           <div className="grid md:grid-cols-3 gap-6 mt-8">
             {/* Nairobi */}
@@ -538,6 +629,7 @@ export default function HomePage() {
                     <h3 className="font-bold text-foreground">Nairobi</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Westlands Business District - Main showroom & corporate office</p>
+                  <p className="text-sm text-muted-foreground mb-3">+254 795 704 273</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
                     View on Google Maps <ArrowRight size={14} />
                   </span>
@@ -569,6 +661,7 @@ export default function HomePage() {
                     <h3 className="font-bold text-foreground">Kisumu</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Lake Basin Mall area - Serving Western Kenya region</p>
+                  <p className="text-sm text-muted-foreground mb-3">+254 795 704 274</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
                     View on Google Maps <ArrowRight size={14} />
                   </span>
@@ -600,6 +693,7 @@ export default function HomePage() {
                     <h3 className="font-bold text-foreground">Mombasa</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Near Naivas Likoni - Flagship showroom & service center</p>
+                  <p className="text-sm text-muted-foreground mb-3">+254 795 704 275</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
                     View on Google Maps <ArrowRight size={14} />
                   </span>

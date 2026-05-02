@@ -5,7 +5,7 @@ import tuktukProduct from "@/assets/tuktukbest.jpeg";
 import motorcycleProduct from "@/assets/motorcycle-chatgpt.png";
 
 const tuktukSpecs = [
-  { icon: <Zap size={18} />, label: "Motor", value: "6,000W" },
+  { icon: <Zap size={18} />, label: "Motor", value: "6,000kw" },
   { icon: <Battery size={18} />, label: "Range", value: "110KM" },
   { icon: <Sun size={18} />, label: "Solar Bonus", value: "+30KM/day" },
   { icon: <Gauge size={18} />, label: "Top Speed", value: "55 km/h" },
@@ -14,7 +14,7 @@ const tuktukSpecs = [
 ];
 
 const motorSpecs = [
-  { icon: <Zap size={18} />, label: "Motor", value: "3,000W" },
+  { icon: <Zap size={18} />, label: "Motor", value: "3,000kw" },
   { icon: <Battery size={18} />, label: "Range", value: "80KM" },
   { icon: <Gauge size={18} />, label: "Top Speed", value: "70 km/h" },
   { icon: <Shield size={18} />, label: "Battery", value: "Swappable" },

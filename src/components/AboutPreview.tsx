@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
-import aboutOffice from "@/assets/realabout.jpeg";
+import aboutOffice from "@/assets/aboutusnewimage.jpeg";
 
 export default function AboutPreview() {
   return (
