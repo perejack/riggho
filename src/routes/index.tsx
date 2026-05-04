@@ -34,19 +34,19 @@ export default function HomePage() {
     () => [
       {
         name: "Nairobi",
-        address: "Westlands Business District - Main showroom & corporate office",
+        address: "Mavoko Business Plaza",
         href: "https://maps.app.goo.gl/QwvnfaPojPnVBtv16",
         latLng: [-1.2921, 36.8219] as const,
       },
       {
         name: "Kisumu",
-        address: "Lake Basin Mall area - Serving Western Kenya region",
+        address: "Obote Road, Next To KCB Kisumu West, Opposite CMC Motors Kisumu",
         href: "https://maps.app.goo.gl/QqJVqtBvPPKWpZDGA",
         latLng: [-0.0917, 34.768] as const,
       },
       {
         name: "Mombasa",
-        address: "Near Naivas Likoni - Flagship showroom & service center",
+        address: "Ferry Opp. Likoni Towers",
         href: "https://www.google.com/maps/place/RHINGGO+ELECTRIC+TUKTUK/@-4.0743892,39.6665507",
         latLng: [-4.0435, 39.6682] as const,
       },
@@ -623,7 +623,7 @@ export default function HomePage() {
                     <MapPin size={16} className="text-electric" />
                     <h3 className="font-bold text-foreground">Nairobi</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-3">Westlands Business District - Main showroom & corporate office</p>
+                  <p className="text-sm text-muted-foreground mb-3">Mavoko Business Plaza</p>
                   <p className="text-sm text-muted-foreground mb-3">0758 888 288</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
                     View on Google Maps <ArrowRight size={14} />
@@ -655,7 +655,7 @@ export default function HomePage() {
                     <MapPin size={16} className="text-electric" />
                     <h3 className="font-bold text-foreground">Kisumu</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-3">Lake Basin Mall area - Serving Western Kenya region</p>
+                  <p className="text-sm text-muted-foreground mb-3">Obote Road, Next To KCB Kisumu West, Opposite CMC Motors Kisumu</p>
                   <p className="text-sm text-muted-foreground mb-3">0799 374 591</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
                     View on Google Maps <ArrowRight size={14} />
@@ -687,7 +687,7 @@ export default function HomePage() {
                     <MapPin size={16} className="text-electric" />
                     <h3 className="font-bold text-foreground">Mombasa</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-3">Near Naivas Likoni - Flagship showroom & service center</p>
+                  <p className="text-sm text-muted-foreground mb-3">Ferry Opp. Likoni Towers</p>
                   <p className="text-sm text-muted-foreground mb-3">0703 915 999</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
                     View on Google Maps <ArrowRight size={14} />

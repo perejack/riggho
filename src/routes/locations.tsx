@@ -9,7 +9,7 @@ import SectionLabel from "@/components/SectionLabel";
 const locations = [
   {
     name: "Nairobi",
-    address: "Westlands Business District - Main showroom & corporate office",
+    address: "Mavoko Business Plaza",
     phone: "0758 888 288",
     email: "Sales@rhinggo.com",
     hours: "Mon-Sat: 8AM - 6PM",
@@ -19,7 +19,7 @@ const locations = [
   },
   {
     name: "Kisumu",
-    address: "Lake Basin Mall area - Serving Western Kenya region",
+    address: "Obote Road, Next To KCB Kisumu West, Opposite CMC Motors Kisumu",
     phone: "0799 374 591",
     email: "Sales@rhinggo.com",
     hours: "Mon-Sat: 8AM - 6PM",
@@ -29,7 +29,7 @@ const locations = [
   },
   {
     name: "Mombasa",
-    address: "Near Naivas Likoni - Flagship showroom & service center",
+    address: "Ferry Opp. Likoni Towers",
     phone: "0703 915 999",
     email: "Sales@rhinggo.com",
     hours: "Mon-Sat: 8AM - 6PM",
