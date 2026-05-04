@@ -14,7 +14,7 @@ export default function Footer() {
               <img src={logoName} alt="RhingGo" className="h-5" />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Kenya's home of electric motorcycles and tuktuks — built for African roads, priced for the everyday hustler.
+              Our vision is to be the African leading smart electric motorcycle brand, promote green travel, support sustainable development, and provide an excellent travel experience through innovation.
             </p>
           </div>
 
@@ -31,11 +31,11 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">Contact</h4>
             <div className="flex flex-col gap-3">
-              <a href="tel:+254700000000" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-electric transition-colors">
-                <Phone size={14} /> +254 700 000 000
+              <a href="tel:+254741799919" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-electric transition-colors">
+                <Phone size={14} /> +254 741 799 919
               </a>
-              <a href="mailto:info@rhinggo.co.ke" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-electric transition-colors">
-                <Mail size={14} /> info@rhinggo.co.ke
+              <a href="mailto:Sales@rhinggo.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-electric transition-colors">
+                <Mail size={14} /> Sales@rhinggo.com
               </a>
               <span className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin size={14} className="mt-0.5 shrink-0" /> Near Naivas Likoni, Mombasa, Kenya
@@ -44,12 +44,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Get Started</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-4">Go Electric</h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Starting from just Ksh 65,000 deposit. Own your electric future today.
+              Flexible payment plans available. Go electric today.
             </p>
             <a
-              href="https://wa.me/254700000000"
+              href="https://wa.me/254741799919"
               target="_blank"
               rel="noopener noreferrer"
               className="gradient-electric text-electric-foreground px-5 py-2.5 rounded-lg text-sm font-semibold inline-block transition-all hover:opacity-90"

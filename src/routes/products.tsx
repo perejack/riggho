@@ -64,7 +64,7 @@ export default function ProductsPage() {
               </div>
               <div className="flex gap-3">
                 <a
-                  href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20the%20RM-T300%20Tuktuk"
+                  href="https://wa.me/254741799919?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20the%20RM-T300%20Tuktuk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="gradient-electric text-electric-foreground px-6 py-3 rounded-xl text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90"
@@ -104,7 +104,7 @@ export default function ProductsPage() {
               </div>
               <div className="flex gap-3">
                 <a
-                  href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20the%20RM-M300%20Motorcycle"
+                  href="https://wa.me/254741799919?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20the%20RM-M300%20Motorcycle"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="gradient-electric text-electric-foreground px-6 py-3 rounded-xl text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90"

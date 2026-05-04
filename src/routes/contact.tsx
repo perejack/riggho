@@ -9,7 +9,7 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Hi RhingGo! I'm ${formData.name}. ${formData.message}. Contact: ${formData.phone || formData.email}`;
-    window.open(`https://wa.me/254795704273?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/254741799919?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -32,34 +32,63 @@ export default function ContactPage() {
               <AnimatedSection>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                   <a
-                    href="https://wa.me/254700000000"
+                    href="https://wa.me/254741799919"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-6 rounded-2xl bg-electric/10 border border-electric/20 hover:border-electric/40 transition-all group"
                   >
                     <MessageCircle size={24} className="text-electric mb-3" />
                     <h3 className="font-semibold text-foreground mb-1">WhatsApp</h3>
-                    <p className="text-sm text-muted-foreground">Chat with us now</p>
+                    <p className="text-sm text-muted-foreground">+254 741 799 919</p>
                   </a>
-                  <a href="tel:+254700000000" className="p-6 rounded-2xl bg-surface border border-border/50 hover:border-electric/30 transition-all">
+                  <a href="tel:+254741799919" className="p-6 rounded-2xl bg-surface border border-border/50 hover:border-electric/30 transition-all">
                     <Phone size={24} className="text-electric mb-3" />
                     <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                    <p className="text-sm text-muted-foreground">+254 700 000 000</p>
+                    <p className="text-sm text-muted-foreground">+254 741 799 919</p>
                   </a>
-                  <a href="mailto:info@rhinggo.co.ke" className="p-6 rounded-2xl bg-surface border border-border/50 hover:border-electric/30 transition-all">
+                  <a href="mailto:Sales@rhinggo.com" className="p-6 rounded-2xl bg-surface border border-border/50 hover:border-electric/30 transition-all">
                     <Mail size={24} className="text-electric mb-3" />
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <p className="text-sm text-muted-foreground">info@rhinggo.co.ke</p>
+                    <p className="text-sm text-muted-foreground">Sales@rhinggo.com</p>
                   </a>
                   <div className="p-6 rounded-2xl bg-surface border border-border/50">
                     <MapPin size={24} className="text-electric mb-3" />
-                    <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
-                    <p className="text-sm text-muted-foreground">Near Naivas Likoni, Mombasa</p>
+                    <h3 className="font-semibold text-foreground mb-1">Locations</h3>
+                    <p className="text-sm text-muted-foreground">Mombasa, Nairobi, Kisumu, Malindi</p>
                   </div>
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection delay={0.15}>
+              {/* Location-specific Contacts */}
+              <AnimatedSection delay={0.1}>
+                <div className="rounded-2xl bg-surface border border-border p-6 mb-8">
+                  <h3 className="font-semibold text-foreground mb-4">Location Contacts</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex items-center gap-2">
+                      <MapPin size={16} className="text-electric" />
+                      <span className="text-sm text-muted-foreground">Mombasa:</span>
+                      <a href="tel:0703915999" className="text-sm text-foreground hover:text-electric">0703 915 999</a>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin size={16} className="text-electric" />
+                      <span className="text-sm text-muted-foreground">Nairobi:</span>
+                      <a href="tel:0758888288" className="text-sm text-foreground hover:text-electric">0758 888 288</a>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin size={16} className="text-electric" />
+                      <span className="text-sm text-muted-foreground">Kisumu:</span>
+                      <a href="tel:0799374591" className="text-sm text-foreground hover:text-electric">0799 374 591</a>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin size={16} className="text-electric" />
+                      <span className="text-sm text-muted-foreground">Malindi:</span>
+                      <a href="tel:0798393508" className="text-sm text-foreground hover:text-electric">0798 393 508</a>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.2}>
                 <div className="rounded-2xl overflow-hidden border border-border/50 h-64">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d39.66!3d-4.09!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDUnMjQuMCJTIDM5wrAzOSczNi4wIkU!5e0!3m2!1sen!2ske!4v1"

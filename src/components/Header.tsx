@@ -45,7 +45,7 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20getting%20a%20quote"
+            href="https://wa.me/254741799919?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20getting%20a%20quote"
             target="_blank"
             rel="noopener noreferrer"
             className="gradient-electric text-electric-foreground px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:opacity-90 glow-electric"
@@ -87,7 +87,7 @@ export default function Header() {
                 </Link>
               ))}
               <a
-                href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20getting%20a%20quote"
+                href="https://wa.me/254741799919?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20getting%20a%20quote"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gradient-electric text-electric-foreground px-5 py-3 rounded-lg text-sm font-semibold text-center mt-2"

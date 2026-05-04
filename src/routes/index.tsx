@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Zap, Sun, Battery, ArrowRight, Fuel, Leaf, Volume2, Shield, CheckCircle, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Zap, Sun, Battery, ArrowRight, Fuel, Leaf, Volume2, Shield, CheckCircle, Phone, Mail, MapPin, MessageCircle, Navigation } from "lucide-react";
 import L from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -18,7 +18,7 @@ import zeroEmissionsImg from "@/assets/zero-emissions.jpg";
 import silentRideImg from "@/assets/silent-ride.jpg";
 import solarPoweredImg from "@/assets/solar-powered.jpg";
 import fortuneImg from "@/assets/fortune.jpg";
-import swapImage from "@/assets/swappablenewimage.jpeg";
+import swapImage from "@/assets/swapandgonew.jpeg";
 import naviLogo from "@/assets/navionewlogo.jpeg";
 import nairobiLocation from "@/assets/NAIROBI.png";
 import kisumuLocation from "@/assets/NAKURU.png";
@@ -49,6 +49,12 @@ export default function HomePage() {
         address: "Near Naivas Likoni - Flagship showroom & service center",
         href: "https://www.google.com/maps/place/RHINGGO+ELECTRIC+TUKTUK/@-4.0743892,39.6665507",
         latLng: [-4.0435, 39.6682] as const,
+      },
+      {
+        name: "Malindi",
+        address: "Malindi Town - Serving the Coastal region",
+        href: "https://maps.google.com/?q=Malindi,Kenya",
+        latLng: [-3.2175, 40.1169] as const,
       },
     ],
     []
@@ -129,7 +135,7 @@ export default function HomePage() {
                 View Models <ArrowRight size={16} />
               </Link>
               <a
-                href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20getting%20a%20quote%20for%20your%20electric%20vehicles."
+                href="https://wa.me/254741799919?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20getting%20a%20quote%20for%20your%20electric%20vehicles."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-xl text-sm font-semibold border border-border text-foreground hover:bg-secondary transition-colors inline-flex items-center gap-2"
@@ -202,7 +208,7 @@ export default function HomePage() {
           <AnimatedSection delay={0.3}>
             <div className="mt-12 text-center">
               <a
-                href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20RM-T300%20Tuktuk%20and%20RM-M300%20Motorcycle%20models."
+                href="https://wa.me/254741799919?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20RM-T300%20Tuktuk%20and%20RM-M300%20Motorcycle%20models."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-electric/10 border border-electric/20 hover:border-electric/40 hover:bg-electric/20 transition-all group"
@@ -231,7 +237,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="rounded-2xl overflow-hidden">
-                <img src={swapImage} alt="Battery swap station" loading="lazy" width={800} height={600} className="w-full h-auto" />
+                <img src={swapImage} alt="Battery swap station" loading="lazy" width={800} height={600} className="w-full h-auto rounded-2xl" />
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
@@ -253,65 +259,89 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Electric */}
-      <section className="py-24">
+      {/* Why Choose Our Electric Tuktuk */}
+      <section className="py-24 bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <AnimatedSection>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                  Why Electric?
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  Forget the marketing. Let's talk numbers — the kind that matter when you're trying to feed your family and grow your business.
-                </p>
-              </AnimatedSection>
+          {/* Section Header */}
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <SectionLabel icon="⚡" text="Why Choose Us" />
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                WHY CHOOSE OUR <span className="text-electric">ELECTRIC TUKTUK</span>
+              </h2>
+            </div>
+          </AnimatedSection>
 
-              <AnimatedSection delay={0.1}>
-                <div className="rounded-2xl border border-border p-6 mb-4 bg-surface">
-                  <h3 className="text-destructive font-semibold mb-2">The Old Way (Petrol)</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Daily fuel costs drain your earnings. Petrol prices keep rising, eating into your profits every single day — money that disappears fast.
-                  </p>
-                </div>
-              </AnimatedSection>
-
-              <AnimatedSection delay={0.2}>
-                <div className="rounded-2xl border border-electric/30 p-6 bg-electric/5">
-                  <h3 className="text-electric font-semibold mb-2">The RhingGo Way (Electric)</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Minimal energy costs with charging from the grid or <strong className="text-foreground">free solar charging</strong>. Save thousands every month — money that stays in your pocket and helps your business grow.
-                  </p>
-                </div>
-              </AnimatedSection>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Numbered Benefits */}
+            <div className="space-y-6">
+              {[
+                { num: "01", title: "LOWER OPERATING COSTS", desc: "Save up to 40% on daily energy expenses compared to petrol or diesel." },
+                { num: "02", title: "QUIETER OPERATION", desc: "Noise-free driving for a calmer, more pleasant urban environment." },
+                { num: "03", title: "LOWER MAINTENANCE NEEDS", desc: "Fewer moving parts reduce breakdowns and service costs." },
+                { num: "04", title: "IMPROVED DRIVER EARNINGS", desc: "Lower costs and higher uptime — more money in drivers' pockets." },
+              ].map((item, i) => (
+                <AnimatedSection key={item.num} delay={i * 0.1}>
+                  <motion.div
+                    whileHover={{ x: 8, scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                    className="group flex gap-4 p-6 rounded-2xl bg-background border border-border/50 hover:border-electric/50 hover:shadow-lg hover:shadow-electric/10 transition-all duration-300 cursor-default"
+                  >
+                    {/* Number Circle */}
+                    <div className="flex-shrink-0">
+                      <div className="w-14 h-14 rounded-2xl gradient-electric flex items-center justify-center text-electric-foreground font-black text-xl group-hover:scale-110 transition-transform duration-300">
+                        {item.num}
+                      </div>
+                    </div>
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-electric transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                    {/* Hover Arrow */}
+                    <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 self-center">
+                      <ArrowRight className="text-electric" size={24} />
+                    </div>
+                  </motion.div>
+                </AnimatedSection>
+              ))}
             </div>
 
-            <AnimatedSection delay={0.1}>
-              <div className="rounded-2xl overflow-hidden">
-                <img src={riderLifestyle} alt="Happy RhingGo rider" loading="lazy" width={800} height={600} className="w-full h-auto" />
-              </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Benefit Cards with images */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-            {benefits.map((b, i) => (
-              <AnimatedSection key={b.title} delay={i * 0.1}>
-                <div className="rounded-2xl overflow-hidden border border-border/50 hover:border-electric/30 transition-all group">
-                  <div className="relative h-36 overflow-hidden">
-                    <img src={b.image} alt={b.title} loading="lazy" width={640} height={640} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-                    <div className="absolute bottom-3 left-3 w-9 h-9 rounded-lg gradient-electric flex items-center justify-center text-electric-foreground">
-                      {b.icon}
+            {/* Right: Image */}
+            <AnimatedSection delay={0.2}>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+                className="relative rounded-3xl overflow-hidden"
+              >
+                <img src={riderLifestyle} alt="Happy RhingGo rider with electric tuktuk" loading="lazy" width={800} height={600} className="w-full h-auto object-cover" />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                {/* Floating Badge */}
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="absolute bottom-6 left-6 right-6"
+                >
+                  <div className="p-4 rounded-2xl bg-electric/10 backdrop-blur-sm border border-electric/30">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl gradient-electric flex items-center justify-center text-electric-foreground">
+                        <Zap size={20} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">The Future is Electric</p>
+                        <p className="text-xs text-muted-foreground">Join thousands of smart drivers</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="p-4 bg-surface">
-                    <h4 className="text-sm font-semibold text-foreground mb-1">{b.title}</h4>
-                    <p className="text-xs text-muted-foreground">{b.desc}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
+                </motion.div>
+              </motion.div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -324,7 +354,7 @@ export default function HomePage() {
               Ready to Go <span className="text-electric">Electric</span>?
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto mb-8">
-              Start with just Ksh 65,000 deposit. Get on the road to savings, cleaner air, and a better business.
+              Go electric with confidence and enjoy lower costs, cleaner mobility, and better earnings.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -334,7 +364,7 @@ export default function HomePage() {
                 Explore Financing <ArrowRight size={16} />
               </Link>
               <a
-                href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'd%20like%20to%20learn%20more%20about%20your%20electric%20vehicles%20and%20financing%20options."
+                href="https://wa.me/254741799919?text=Hi%20RhingGo%2C%20I'd%20like%20to%20learn%20more%20about%20your%20electric%20vehicles%20and%20financing%20options."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-xl text-sm font-semibold border border-border text-foreground hover:bg-secondary transition-colors inline-flex items-center gap-2"
@@ -385,13 +415,6 @@ export default function HomePage() {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Watu Credit</h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    Fast, flexible asset financing with low daily installments.
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-semibold">
-                    <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-                    Same-day processing
-                  </div>
                 </div>
               </a>
             </AnimatedSection>
@@ -413,13 +436,6 @@ export default function HomePage() {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">M-KOPA</h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    Pay-as-you-go technology for easy, connected ownership.
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-semibold">
-                    <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-                    Simple digital payment plans
-                  </div>
                 </div>
               </a>
             </AnimatedSection>
@@ -441,13 +457,6 @@ export default function HomePage() {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Fortune Credit Limited</h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    A microfinance institution (MFI) based in Nairobi, Kenya, that focuses on providing financial and non-financial services to underserved and unbanked populations.
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-semibold">
-                    <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-                    Serving the unbanked
-                  </div>
                 </div>
               </a>
             </AnimatedSection>
@@ -469,18 +478,11 @@ export default function HomePage() {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Rafiki Microfinance</h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    Empowering entrepreneurs through tailored business loans.
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-semibold">
-                    <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-                    Competitive interest rates
-                  </div>
                 </div>
               </a>
             </AnimatedSection>
 
-            {/* Navio */}
+            {/* Navi */}
             <AnimatedSection delay={0.4}>
               <a
                 href="https://njavio.com"
@@ -492,18 +494,11 @@ export default function HomePage() {
                   <div className="relative h-48 mb-6 rounded-2xl overflow-hidden bg-white/5 -mx-8 -mt-8 flex items-center justify-center p-4">
                     <img 
                       src={naviLogo} 
-                      alt="Navio" 
+                      alt="Navi" 
                       className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Navio</h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    A financial consultancy and advisory firm based in Kenya. Unlike traditional banks or mobile lending apps, they primarily focus on expert guidance for individuals and businesses.
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric/10 border border-electric/20 text-electric text-sm font-semibold">
-                    <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-                    Expert financial guidance
-                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-electric transition-colors">Navi</h3>
                 </div>
               </a>
             </AnimatedSection>
@@ -529,7 +524,7 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <AnimatedSection delay={0}>
               <a
-                href="https://wa.me/254795704273?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20your%20electric%20vehicles."
+                href="https://wa.me/254741799919?text=Hi%20RhingGo%2C%20I'm%20interested%20in%20your%20electric%20vehicles."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-6 rounded-2xl bg-electric/10 border border-electric/20 hover:border-electric/40 hover:scale-[1.02] transition-all group h-full block"
@@ -542,23 +537,23 @@ export default function HomePage() {
 
             <AnimatedSection delay={0.1}>
               <a
-                href="tel:+254795704273"
+                href="tel:+254741799919"
                 className="p-6 rounded-2xl bg-background border border-border/50 hover:border-electric/30 hover:scale-[1.02] transition-all h-full block"
               >
                 <Phone size={24} className="text-electric mb-3" />
                 <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                <p className="text-sm text-muted-foreground">+254 795 704 273</p>
+                <p className="text-sm text-muted-foreground">+254 741 799 919</p>
               </a>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
               <a
-                href="mailto:info@rhinggo.co.ke"
+                href="mailto:Sales@rhinggo.com"
                 className="p-6 rounded-2xl bg-background border border-border/50 hover:border-electric/30 hover:scale-[1.02] transition-all h-full block"
               >
                 <Mail size={24} className="text-electric mb-3" />
                 <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                <p className="text-sm text-muted-foreground">info@rhinggo.co.ke</p>
+                <p className="text-sm text-muted-foreground">Sales@rhinggo.com</p>
               </a>
             </AnimatedSection>
 
@@ -566,7 +561,7 @@ export default function HomePage() {
               <div className="p-6 rounded-2xl bg-background border border-border/50 h-full">
                 <MapPin size={24} className="text-electric mb-3" />
                 <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
-                <p className="text-sm text-muted-foreground">3 Locations Across Kenya</p>
+                <p className="text-sm text-muted-foreground">4 Locations Across Kenya</p>
               </div>
             </AnimatedSection>
           </div>
@@ -604,7 +599,7 @@ export default function HomePage() {
           </AnimatedSection>
 
           {/* Locations Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mt-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {/* Nairobi */}
             <AnimatedSection delay={0.4}>
               <a 
@@ -629,7 +624,7 @@ export default function HomePage() {
                     <h3 className="font-bold text-foreground">Nairobi</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Westlands Business District - Main showroom & corporate office</p>
-                  <p className="text-sm text-muted-foreground mb-3">+254 795 704 273</p>
+                  <p className="text-sm text-muted-foreground mb-3">0758 888 288</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
                     View on Google Maps <ArrowRight size={14} />
                   </span>
@@ -661,7 +656,7 @@ export default function HomePage() {
                     <h3 className="font-bold text-foreground">Kisumu</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Lake Basin Mall area - Serving Western Kenya region</p>
-                  <p className="text-sm text-muted-foreground mb-3">+254 795 704 274</p>
+                  <p className="text-sm text-muted-foreground mb-3">0799 374 591</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
                     View on Google Maps <ArrowRight size={14} />
                   </span>
@@ -693,12 +688,34 @@ export default function HomePage() {
                     <h3 className="font-bold text-foreground">Mombasa</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Near Naivas Likoni - Flagship showroom & service center</p>
-                  <p className="text-sm text-muted-foreground mb-3">+254 795 704 275</p>
+                  <p className="text-sm text-muted-foreground mb-3">0703 915 999</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold group-hover:underline">
                     View on Google Maps <ArrowRight size={14} />
                   </span>
                 </div>
               </a>
+            </AnimatedSection>
+
+            {/* Malindi */}
+            <AnimatedSection delay={0.7}>
+              <div className="block rounded-2xl overflow-hidden border border-border/50 bg-surface">
+                <div className="h-48 overflow-hidden bg-muted relative">
+                  <div className="w-full h-full bg-gradient-to-br from-electric/20 to-electric/5 flex items-center justify-center">
+                    <MapPin size={48} className="text-electric drop-shadow-lg" />
+                  </div>
+                </div>
+                <div className="p-5 bg-surface">
+                  <div className="flex items-center gap-2 mb-2">
+                    <MapPin size={16} className="text-electric" />
+                    <h3 className="font-bold text-foreground">Malindi</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">Malindi Town - Serving the Coastal region</p>
+                  <p className="text-sm text-muted-foreground mb-3">0798 393 508</p>
+                  <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold">
+                    <Navigation size={14} /> Coming Soon
+                  </span>
+                </div>
+              </div>
             </AnimatedSection>
           </div>
         </div>

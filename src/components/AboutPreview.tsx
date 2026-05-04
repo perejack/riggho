@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
-import aboutOffice from "@/assets/aboutusnewimage.jpeg";
+import rmT300 from "@/assets/RM T300.png";
 
 export default function AboutPreview() {
   return (
@@ -10,16 +10,18 @@ export default function AboutPreview() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <AnimatedSection>
-            <SectionLabel icon="🌍" text="About RhingGo" />
+            <SectionLabel icon="🌍" text="Company Overview" />
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Driving Kenya's{" "}
-              <span className="text-electric">Quiet Revolution</span>
+              Company Overview
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              RhingGo Emobility is the Kenyan face of Hangzhou RhingGo Technology Co. Ltd — a global leader in e-mobility solutions purpose-built for the African market. From our base in Mombasa, we are driving a quiet revolution — one electric tuktuk at a time.
+              RHINGGO is dedicated to the research & development of electric motorcycles and a smart travel ecosystem. By integrating high-performance hardware, IoT platforms, and charging & swapping networks, RHINGGO enhances user experience, ensures asset security, and empowers partners.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Our vision is to be the African leading smart electric motorcycle brand, promote green travel, support sustainable development, and provide an excellent travel experience through innovation.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              We believe going electric shouldn't mean going broke. That's why we've made it possible to get on the road with as little as Ksh 65,000 as a deposit. We are not just selling vehicles — we are handing people a livelihood upgrade.
+              RHINGGO provides high-performance electric motorcycles, a smart IoT platform, and an efficient charging and swapping network to set a new benchmark for electric mobility in Africa.
             </p>
             <Link
               to="/about"
@@ -30,7 +32,7 @@ export default function AboutPreview() {
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
             <div className="rounded-2xl overflow-hidden">
-              <img src={aboutOffice} alt="RhingGo showroom in Mombasa" loading="lazy" width={800} height={600} className="w-full h-auto" />
+              <img src={rmT300} alt="RM-T300 Electric Tuktuk" loading="lazy" width={800} height={600} className="w-full h-auto" />
             </div>
           </AnimatedSection>
         </div>
