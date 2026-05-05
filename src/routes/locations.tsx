@@ -5,6 +5,7 @@ import L from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
+import mapIcon from "@/assets/MAPICON.png";
 
 const locations = [
   {
@@ -12,7 +13,7 @@ const locations = [
     address: "Mavoko Business Plaza",
     phone: "0758 888 288",
     email: "Sales@rhinggo.com",
-    hours: "Mon-Sat: 8AM - 6PM",
+    hours: "Mon-Sat: 8:30 AM - 5:30 PM",
     mapUrl: "https://maps.app.goo.gl/QwvnfaPojPnVBtv16",
     latLng: [-1.2921, 36.8219] as const,
     isHQ: true,
@@ -22,7 +23,7 @@ const locations = [
     address: "Obote Road, Next To KCB Kisumu West, Opposite CMC Motors Kisumu",
     phone: "0799 374 591",
     email: "Sales@rhinggo.com",
-    hours: "Mon-Sat: 8AM - 6PM",
+    hours: "Mon-Sat: 8:30 AM - 5:30 PM",
     mapUrl: "https://maps.app.goo.gl/QqJVqtBvPPKWpZDGA",
     latLng: [-0.0917, 34.768] as const,
     isHQ: false,
@@ -32,18 +33,17 @@ const locations = [
     address: "Ferry Opp. Likoni Towers",
     phone: "0703 915 999",
     email: "Sales@rhinggo.com",
-    hours: "Mon-Sat: 8AM - 6PM",
+    hours: "Mon-Sat: 8:30 AM - 5:30 PM",
     mapUrl: "https://www.google.com/maps/place/RHINGGO+ELECTRIC+TUKTUK/@-4.0743892,39.6665507",
     latLng: [-4.0435, 39.6682] as const,
     isHQ: false,
   },
   {
     name: "Malindi",
-    address: "Malindi Town - Serving the Coastal region",
+    address: "Q4H7+CFG, B8, Malindi",
     phone: "0798 393 508",
-    email: "Sales@rhinggo.com",
-    hours: "Mon-Sat: 8AM - 6PM",
-    mapUrl: "https://maps.google.com/?q=Malindi,Kenya",
+    hours: "Mon-Sat: 8:30 AM - 5:30 PM",
+    mapUrl: "https://www.google.com/maps/search/Q4H7%2BCFG,+B8,+Malindi/@-3.2213955,40.1106098,656m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D",
     latLng: [-3.2175, 40.1169] as const,
     isHQ: false,
   },
@@ -71,29 +71,11 @@ export default function LocationsPage() {
 
   const getMarkerIcon = useMemo(() => {
     return (selected: boolean) =>
-      L.divIcon({
-        className: "",
-        iconSize: [34, 34],
-        iconAnchor: [17, 34],
-        popupAnchor: [0, -34],
-        html: `
-          <div style="
-            width:34px;height:34px;border-radius:9999px;
-            background:${selected ? "var(--electric)" : "rgba(255,255,255,0.95)"};
-            color:${selected ? "var(--electric-foreground)" : "#0b1220"};
-            display:flex;align-items:center;justify-content:center;
-            box-shadow:0 10px 25px rgba(0,0,0,0.25);
-            border:${selected ? "3px solid rgba(255,255,255,0.35)" : "1px solid rgba(0,0,0,0.1)"};
-            font-weight:900;font-size:14px;
-          ">R</div>
-          <div style="
-            width:0;height:0;margin:0 auto;
-            border-left:7px solid transparent;
-            border-right:7px solid transparent;
-            border-top:10px solid ${selected ? "var(--electric)" : "rgba(255,255,255,0.95)"};
-            filter:drop-shadow(0 6px 10px rgba(0,0,0,0.15));
-          "></div>
-        `,
+      L.icon({
+        iconUrl: mapIcon,
+        iconSize: selected ? [48, 48] : [40, 40],
+        iconAnchor: selected ? [24, 48] : [20, 40],
+        popupAnchor: [0, -40],
       });
   }, []);
 

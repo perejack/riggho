@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Globe, MapPin, Target } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
-import rmT300 from "@/assets/RM T300.png";
+import newAboutImage from "@/assets/newaboutimage.jpeg";
 import itsOurMovement from "@/assets/its our movemenentnew.jpeg";
 
 export default function AboutPage() {
@@ -35,7 +35,7 @@ export default function AboutPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <div className="rounded-2xl overflow-hidden bg-black">
-                <img src={rmT300} alt="RM-T300 Electric Tuktuk" loading="lazy" width={800} height={600} className="w-full h-full object-cover" />
+                <img src={newAboutImage} alt="About RHINGGO" loading="lazy" width={800} height={600} className="w-full h-full object-cover" />
               </div>
             </AnimatedSection>
           </div>
@@ -49,7 +49,7 @@ export default function AboutPage() {
             {[
               { icon: <Target size={24} />, title: "Our Mission", desc: "Make electric mobility accessible to every Kenyan who works on wheels. From tuktuk operators in Mombasa to boda boda riders in Nairobi." },
               { icon: <Globe size={24} />, title: "Global Backing", desc: "Backed by Hangzhou RhingGo Technology Co. Ltd — a global leader in e-mobility solutions with cutting-edge manufacturing." },
-              { icon: <MapPin size={24} />, title: "Kenya First", desc: "Based in Mombasa with plans to expand to Nairobi. Built for African roads, priced for the everyday hustler." },
+              { icon: <MapPin size={24} />, title: "Kenya First", desc: "Based in Mombasa with plans to expand all over the country. Built for African roads, priced for the everyday hustler." },
             ].map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 0.1}>
                 <div className="p-8 rounded-2xl bg-surface-elevated border border-border/50 h-full">

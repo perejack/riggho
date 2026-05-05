@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
-import rmT300 from "@/assets/RM T300.png";
+import newAboutImage from "@/assets/newaboutimage.jpeg";
 
 export default function AboutPreview() {
   return (
@@ -31,8 +31,8 @@ export default function AboutPreview() {
             </Link>
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={rmT300} alt="RM-T300 Electric Tuktuk" loading="lazy" width={800} height={600} className="w-full h-auto" />
+            <div className="rounded-2xl overflow-hidden bg-black">
+              <img src={newAboutImage} alt="About RHINGGO" loading="lazy" width={800} height={600} className="w-full h-full object-cover" />
             </div>
           </AnimatedSection>
         </div>

@@ -1,11 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
+import naviLogo from "@/assets/navi logo.png";
 
 const partners = [
   { name: "Watu Credit", logo: "https://watu.com/wp-content/uploads/Watu_OpenGraph.jpg", link: "https://watu.com" },
-  { name: "M-KOPA", logo: "https://cdn.worldvectorlogo.com/logos/m-kopa.svg", link: "https://m-kopa.com" },
-  { name: "Navi", logo: "https://play-lh.googleusercontent.com/6e1ZMMF76S9i2ElL1xDpE-2qpB-_lwI6jkk9IXx7yX3Ai8TfQsBWhKMWHbAnBkx6MA", link: "https://navi.com" },
+  { name: "M-KOPA", logo: "https://techafricanews.com/wp-content/uploads/2024/09/MKOPA-PR.jpg", link: "https://m-kopa.com" },
+  { name: "Navi", logo: naviLogo, link: "https://navi.com" },
   { name: "Rafiki Microfinance", logo: "https://rafikibank.co.ke/wp-content/uploads/2019/10/Logo-FOr-Blue.png", link: "https://rafikibank.co.ke" },
 ];
 

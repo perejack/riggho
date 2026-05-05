@@ -15,28 +15,28 @@ export default function SwapStationsPage() {
     {
       name: "Nairobi",
       address: "Mombasa rd, Mavoko Business Park, opp. Signature Mall",
-      hours: "7:00 AM - 7:00 PM",
+      hours: "Mon-Sat: 8:30 AM - 5:30 PM",
       latLng: [-1.2921, 36.8219] as const,
       href: "https://maps.google.com/?q=Mavoko+Business+Park+Signature+Mall",
     },
     {
       name: "Kisumu",
       address: "Obote Road, Next To KCB Kisumu West, Opposite CMC Motors Kisumu",
-      hours: "7:00 AM - 7:00 PM",
+      hours: "Mon-Sat: 8:30 AM - 5:30 PM",
       latLng: [-0.0917, 34.768] as const,
       href: "https://maps.google.com/?q=Obote+Road+Kisumu+KCB",
     },
     {
       name: "Mombasa",
       address: "Ferry Opposite Likoni Towers",
-      hours: "6:00 AM - 8:00 PM",
+      hours: "Mon-Sat: 8:30 AM - 5:30 PM",
       latLng: [-4.0435, 39.6682] as const,
       href: "https://maps.google.com/?q=Ferry+Likoni+Towers+Mombasa",
     },
     {
       name: "Malindi",
       address: "Near Mass Petrol Station, opp. Mogo Office",
-      hours: "7:00 AM - 6:00 PM",
+      hours: "Mon-Sat: 8:30 AM - 5:30 PM",
       latLng: [-3.2175, 40.1169] as const,
       href: "https://maps.google.com/?q=Malindi+Mass+Petrol+Station+Mogo",
     },
@@ -184,7 +184,7 @@ export default function SwapStationsPage() {
                 We are expanding our swap station network across Kenya. Stay tuned for new locations in Nakuru, Eldoret, and more cities.
               </p>
               <a
-                href="https://wa.me/254741799919?text=Hi%20RhingGo%2C%20I'd%20like%20to%20know%20more%20about%20swap%20stations"
+                href="https://www.google.com/maps/d/edit?mid=188MGrfugSGCgALnMVH45RM79iTtyPKY&usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gradient-electric text-electric-foreground px-8 py-3.5 rounded-xl text-sm font-semibold inline-flex items-center gap-2 glow-electric hover:opacity-90 transition-all"

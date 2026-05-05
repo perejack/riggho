@@ -675,10 +675,15 @@ export default function HomePage() {
 
             {/* Malindi */}
             <AnimatedSection delay={0.7}>
-              <div className="block rounded-2xl overflow-hidden border border-border/50 bg-surface">
+              <a
+                href="https://maps.app.goo.gl/Q4H7CFGB8Malindi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl overflow-hidden border border-border/50 bg-surface hover:border-electric/30 transition-all group"
+              >
                 <div className="h-48 overflow-hidden bg-muted relative">
                   <div className="w-full h-full bg-gradient-to-br from-electric/20 to-electric/5 flex items-center justify-center">
-                    <MapPin size={48} className="text-electric drop-shadow-lg" />
+                    <img src={mapIcon} alt="Location marker" className="w-16 h-16 drop-shadow-lg" />
                   </div>
                 </div>
                 <div className="p-5 bg-surface">
@@ -686,13 +691,13 @@ export default function HomePage() {
                     <img src={mapIcon} alt="Location" className="w-5 h-5" />
                     <h3 className="font-bold text-foreground">Malindi</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-3">Malindi Town - Serving the Coastal region</p>
+                  <p className="text-sm text-muted-foreground mb-3">Q4H7+CFG, B8, Malindi</p>
                   <p className="text-sm text-muted-foreground mb-3">0798 393 508</p>
                   <span className="inline-flex items-center gap-2 text-electric text-sm font-semibold">
-                    <Navigation size={14} /> Coming Soon
+                    View on Google Maps <ArrowRight size={14} />
                   </span>
                 </div>
-              </div>
+              </a>
             </AnimatedSection>
           </div>
         </div>
