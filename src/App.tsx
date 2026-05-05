@@ -8,7 +8,7 @@ import AboutPage from "@/routes/about";
 import ContactPage from "@/routes/contact";
 import FinancingPage from "@/routes/financing";
 import LocationsPage from "@/routes/locations";
-import GalleryPage from "@/routes/gallery";
+import SwapStationsPage from "@/routes/swap-stations";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/financing" element={<FinancingPage />} />
           <Route path="/locations" element={<LocationsPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/swap-stations" element={<SwapStationsPage />} />
         </Routes>
       </main>
       <Footer />

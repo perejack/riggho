@@ -3,7 +3,7 @@ import { ArrowRight, Globe, MapPin, Target } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionLabel from "@/components/SectionLabel";
 import rmT300 from "@/assets/RM T300.png";
-import riderLifestyle from "@/assets/rider-lifestyle.jpg";
+import itsOurMovement from "@/assets/its our movemenentnew.jpeg";
 
 export default function AboutPage() {
   return (
@@ -34,8 +34,8 @@ export default function AboutPage() {
               </Link>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
-              <div className="rounded-2xl overflow-hidden">
-                <img src={rmT300} alt="RM-T300 Electric Tuktuk" loading="lazy" width={800} height={600} className="w-full h-auto" />
+              <div className="rounded-2xl overflow-hidden bg-black">
+                <img src={rmT300} alt="RM-T300 Electric Tuktuk" loading="lazy" width={800} height={600} className="w-full h-full object-cover" />
               </div>
             </AnimatedSection>
           </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="rounded-2xl overflow-hidden">
-                <img src={riderLifestyle} alt="RhingGo riders in Mombasa" loading="lazy" width={800} height={600} className="w-full h-auto" />
+                <img src={itsOurMovement} alt="It's Our Movement" loading="lazy" width={800} height={600} className="w-full h-auto" />
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
@@ -81,7 +81,7 @@ export default function AboutPage() {
                 <span className="text-electric">It's Yours Too.</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                We are not just selling vehicles — we are handing people a livelihood upgrade. We believe going electric shouldn't mean going broke. That's why we've made it possible to get on the road with as little as Ksh 65,000 as a deposit.
+                We are not just selling vehicles — we are handing people a livelihood upgrade. We believe going electric shouldn't mean going broke. That's why we offer flexible financing options to get you on the road with ease.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Our flagship RM-T300 Tuktuk isn't just a vehicle. It charges fast, runs on a swappable battery, and comes with a solar range extender that adds 30KM every day — for free, from the sun.
@@ -96,8 +96,8 @@ export default function AboutPage() {
                   <div className="text-xs text-muted-foreground">Power</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-electric">Ksh 38K</div>
-                  <div className="text-xs text-muted-foreground">Deposit</div>
+                  <div className="text-2xl font-bold text-electric">Easy</div>
+                  <div className="text-xs text-muted-foreground">Financing</div>
                 </div>
               </div>
             </AnimatedSection>

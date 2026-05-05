@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Zap, Sun, Battery, ArrowRight, Fuel, Leaf, Volume2, Shield, CheckCircle, Phone, Mail, MapPin, MessageCircle, Navigation } from "lucide-react";
+import { Zap, Sun, Battery, ArrowRight, Fuel, Leaf, Volume2, Shield, CheckCircle, Phone, Mail, MapPin, MessageCircle, Navigation, Gauge } from "lucide-react";
 import L from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -23,6 +23,7 @@ import naviLogo from "@/assets/navionewlogo.jpeg";
 import nairobiLocation from "@/assets/NAIROBI.png";
 import kisumuLocation from "@/assets/NAKURU.png";
 import mombasaLocation from "@/assets/MOMBASA.png";
+import mapIcon from "@/assets/MAPICON.png";
 
 export default function HomePage() {
 
@@ -62,38 +63,20 @@ export default function HomePage() {
 
   const markerIcon = useMemo(
     () =>
-      L.divIcon({
-        className: "",
-        iconSize: [34, 34],
-        iconAnchor: [17, 34],
-        popupAnchor: [0, -34],
-        html: `
-          <div style="
-            width:34px;height:34px;border-radius:9999px;
-            background:var(--electric);
-            color:var(--electric-foreground);
-            display:flex;align-items:center;justify-content:center;
-            box-shadow:0 10px 25px rgba(0,0,0,0.25);
-            border:3px solid rgba(255,255,255,0.35);
-            font-weight:900;font-size:14px;
-          ">R</div>
-          <div style="
-            width:0;height:0;margin:0 auto;
-            border-left:7px solid transparent;
-            border-right:7px solid transparent;
-            border-top:10px solid var(--electric);
-            filter:drop-shadow(0 6px 10px rgba(0,0,0,0.15));
-          "></div>
-        `,
+      L.icon({
+        iconUrl: mapIcon,
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40],
       }),
     []
   );
 
   const stats = [
     { value: "110KM", label: "Range per charge", icon: <Zap size={18} /> },
-    { value: "6,000kw", label: "Power", icon: <Battery size={18} /> },
+    { value: "45 km/h", label: "Top Speed", icon: <Gauge size={18} /> },
     { value: "30KM", label: "Free solar daily", icon: <Sun size={18} /> },
-    { value: "Ksh 65K", label: "Deposit to start", icon: <Shield size={18} /> },
+    { value: "Flexible", label: "Payment plans", icon: <Shield size={18} /> },
   ];
 
   const benefits = [
@@ -124,9 +107,6 @@ export default function HomePage() {
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-[0.95] tracking-tight" key="hero-v2">
               DRIVE RHINGGO, EARN MORE!, <span className="text-electric">SAVE MORE!</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-lg leading-relaxed">
-              Built for African roads. Priced for the everyday hustler. Solar-powered tuktuks and electric motorcycles that work as hard as you do.
-            </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 to="/products"
@@ -191,7 +171,7 @@ export default function HomePage() {
               description="The flagship. Solar-powered, swappable battery, 110KM range. The workhorse of Mombasa's streets."
               image={tuktukProduct}
               price="From Ksh 380,000"
-              specs={["110KM Range", "Solar Extender", "Swappable Battery", "6,000kw"]}
+              specs={["110KM Range", "Solar Extender", "Swappable Battery", "45 km/h"]}
               delay={0}
             />
             <ProductCard
@@ -199,7 +179,7 @@ export default function HomePage() {
               description="Silent power for the boda boda revolution. Fast charging, zero emissions, maximum hustle."
               image={motorcycleProduct}
               price="From Ksh 169,000"
-              specs={["80KM Range", "Swappable Battery", "Low Maintenance", "3,000kw"]}
+              specs={["150KM Range", "Swappable Battery", "Low Maintenance", "90 km/h"]}
               delay={0.15}
             />
           </div>
@@ -515,10 +495,7 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-5xl font-bold mb-4">
                 Let's <span className="text-electric">Talk</span>
               </h2>
-              <p className="text-muted-foreground max-w-lg mx-auto">
-                Whether you're a single rider or a fleet buyer, we'd love to hear from you.
-              </p>
-            </div>
+              </div>
           </AnimatedSection>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -615,12 +592,12 @@ export default function HomePage() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <MapPin size={40} className="text-electric drop-shadow-lg" />
+                    <img src={mapIcon} alt="Location marker" className="w-10 h-10 drop-shadow-lg" />
                   </div>
                 </div>
                 <div className="p-5 bg-surface">
                   <div className="flex items-center gap-2 mb-2">
-                    <MapPin size={16} className="text-electric" />
+                    <img src={mapIcon} alt="Location" className="w-5 h-5" />
                     <h3 className="font-bold text-foreground">Nairobi</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Mavoko Business Plaza</p>
@@ -647,12 +624,12 @@ export default function HomePage() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <MapPin size={40} className="text-blue-500 drop-shadow-lg" />
+                    <img src={mapIcon} alt="Location marker" className="w-10 h-10 drop-shadow-lg" />
                   </div>
                 </div>
                 <div className="p-5 bg-surface">
                   <div className="flex items-center gap-2 mb-2">
-                    <MapPin size={16} className="text-electric" />
+                    <img src={mapIcon} alt="Location" className="w-5 h-5" />
                     <h3 className="font-bold text-foreground">Kisumu</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Obote Road, Next To KCB Kisumu West, Opposite CMC Motors Kisumu</p>
@@ -679,12 +656,12 @@ export default function HomePage() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <MapPin size={40} className="text-orange-500 drop-shadow-lg" />
+                    <img src={mapIcon} alt="Location marker" className="w-10 h-10 drop-shadow-lg" />
                   </div>
                 </div>
                 <div className="p-5 bg-surface">
                   <div className="flex items-center gap-2 mb-2">
-                    <MapPin size={16} className="text-electric" />
+                    <img src={mapIcon} alt="Location" className="w-5 h-5" />
                     <h3 className="font-bold text-foreground">Mombasa</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Ferry Opp. Likoni Towers</p>
@@ -706,7 +683,7 @@ export default function HomePage() {
                 </div>
                 <div className="p-5 bg-surface">
                   <div className="flex items-center gap-2 mb-2">
-                    <MapPin size={16} className="text-electric" />
+                    <img src={mapIcon} alt="Location" className="w-5 h-5" />
                     <h3 className="font-bold text-foreground">Malindi</h3>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">Malindi Town - Serving the Coastal region</p>
