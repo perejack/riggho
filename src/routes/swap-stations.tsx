@@ -189,7 +189,7 @@ export default function SwapStationsPage() {
                 rel="noopener noreferrer"
                 className="gradient-electric text-electric-foreground px-8 py-3.5 rounded-xl text-sm font-semibold inline-flex items-center gap-2 glow-electric hover:opacity-90 transition-all"
               >
-                <MapPin size={16} /> Find Nearest Station
+                <MapPin size={16} /> Find Swap Station
               </a>
             </div>
           </AnimatedSection>

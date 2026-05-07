@@ -11,7 +11,7 @@ import AboutPreview from "@/components/AboutPreview";
 import heroBg from "@/assets/background.jpeg";
 import tuktukProduct from "@/assets/tuktukbest.jpeg";
 import motorcycleProduct from "@/assets/motorcycle-chatgpt.png";
-import riderLifestyle from "@/assets/bodaboda rider.png";
+import whychooseustuktuk from "@/assets/rhigootuktuk.jpeg";
 import whatsappIcon from "@/assets/whatsapp-icon.png";
 import zeroFuelImg from "@/assets/zero-fuel.jpg";
 import zeroEmissionsImg from "@/assets/zero-emissions.jpg";
@@ -298,7 +298,7 @@ export default function HomePage() {
                 transition={{ duration: 0.4 }}
                 className="relative rounded-3xl overflow-hidden"
               >
-                <img src={riderLifestyle} alt="Happy RhingGo rider with electric tuktuk" loading="lazy" width={800} height={600} className="w-full h-auto object-cover" />
+                <img src={whychooseustuktuk} alt="Why Choose Our Electric Tuktuk" loading="lazy" width={800} height={600} className="w-full h-auto object-cover" />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 {/* Floating Badge */}

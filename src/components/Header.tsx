@@ -10,7 +10,7 @@ const navLinks = [
   { to: "/products", label: "Models" },
   { to: "/financing", label: "Financing" },
   { to: "/swap-stations", label: "Swap Stations" },
-  { to: "/locations", label: "Locations" },
+  { to: "/locations", label: "Branch" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
