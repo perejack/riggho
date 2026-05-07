@@ -11,7 +11,7 @@ import AboutPreview from "@/components/AboutPreview";
 import heroBg from "@/assets/background.jpeg";
 import tuktukProduct from "@/assets/tuktukbest.jpeg";
 import motorcycleProduct from "@/assets/motorcycle-chatgpt.png";
-import whychooseustuktuk from "@/assets/rhigootuktuk.jpeg";
+import whychooseustuktuk from "@/assets/whychooseourtuktuk.jpeg";
 import whatsappIcon from "@/assets/whatsapp-icon.png";
 import zeroFuelImg from "@/assets/zero-fuel.jpg";
 import zeroEmissionsImg from "@/assets/zero-emissions.jpg";
